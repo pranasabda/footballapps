@@ -11,8 +11,9 @@
         android:id="@+id/image_team_view"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@mipmap/ic_launcher"
-        android:contentDescription="@string/gambar" />
+        android:contentDescription="@string/gambar"
+        tools:src="@drawable/img_barca"/>
+        <!--android:src="@mipmap/ic_launcher" // untuk preview pake tools-->
 
     <TextView
         android:id="@+id/name_team_view"
