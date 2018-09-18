@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:orientation="vertical"
+    android:padding="2dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_date_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                tools:text="09-09-2018" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!--HOME TEAM-->
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_home_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/tv_home_team"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        tools:text="Home Team" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight="1"
+                    android:text="@string/vs"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorRed"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!--AWAY TEAM-->
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_away_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:text="0" />
+
+                    <TextView
+                        android:id="@+id/tv_away_team"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"
+                        tools:text="Away Team" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

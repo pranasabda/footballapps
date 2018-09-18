@@ -1,8 +1,9 @@
-package com.prana.footballapps
+package com.prana.footballapps.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import com.prana.footballapps.R
 import com.prana.footballapps.R.array.*
 import com.prana.footballapps.adapter.TeamAdapter
 import com.prana.footballapps.model.TeamDataItem

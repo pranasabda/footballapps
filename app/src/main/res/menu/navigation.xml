@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_prev_match"
+        android:icon="@drawable/icons8_trophy_50"
+        android:title="@string/title_prev_match" />
+
+    <item
+        android:id="@+id/nav_next_match"
+        android:icon="@drawable/ic_event_black_24dp"
+        android:title="@string/title_next_match" />
+
+    <!--<item-->
+        <!--android:id="@+id/navigation_notifications"-->
+        <!--android:icon="@drawable/icons8_calendar_64"-->
+        <!--android:title="@string/title_notifications" />-->
+
+</menu>
