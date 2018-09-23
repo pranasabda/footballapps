@@ -64,6 +64,9 @@ dependencies {
     // Anko : Commons (Intent,Dialog,logging etc), Layout, SQLite.
     implementation "org.jetbrains.anko:anko:$anko_version"
 
+    // Anko Design : Snackbar dan lain-lain
+    implementation "org.jetbrains.anko:anko-design:$anko_version"
+
     // GSON
     implementation 'com.google.code.gson:gson:2.8.5'
 
@@ -89,10 +92,12 @@ dependencies {
 
     //    implementation "org.jetbrains.anko:anko-appcompat-v7-coroutines:$anko_version"
 
-    //
-
-    //    // Anko SQLite
-
-    //    implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
     implementation 'com.android.support:cardview-v7:27.1.1'
+
+    // Anko SQLite
+    implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
+
+    // Add Stetho
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+
 }

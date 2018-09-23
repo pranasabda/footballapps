@@ -61,7 +61,9 @@ class NextMatchFragment : Fragment(), MatchEventView {
         swipeRefreshLayout  = view.swipe_refresh
         progressBar         = view.progress_bar
 
-        swipeRefreshLayout.onRefresh { matchEventPresenter.getMatchNextData("4335") }
+        swipeRefreshLayout.onRefresh {
+            matchEventPresenter.getMatchNextData("4335")
+        }
         showProgress()
 
         val api     = ApiRequest()

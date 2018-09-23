@@ -75,5 +75,7 @@
     <string name="substitutes">Substitutes</string>
     <string name="lineups">Lineups</string>
     <string name="textDetails">%1$s\n%2$s</string>
+    <string name="favorite_match">Favorite Match</string>
+    <string name="favorites">favorites</string>
 
 </resources>

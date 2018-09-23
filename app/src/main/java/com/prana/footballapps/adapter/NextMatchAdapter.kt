@@ -29,7 +29,7 @@ class NextMatchAdapter (
 
 //    override fun getItemCount(): Int = dataItems.size
 
-    override fun onBindViewHolder(holder: NextMatchAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         holder.bindItem(dataItems[position], listener)
     }

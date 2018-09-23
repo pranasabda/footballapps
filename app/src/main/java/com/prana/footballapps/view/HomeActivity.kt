@@ -4,8 +4,10 @@ import android.support.v4.app.Fragment
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import com.facebook.stetho.Stetho
 import com.prana.footballapps.R
 import com.prana.footballapps.model.MatchDataItem
+import com.prana.footballapps.view.fragment.FavoMatchFragment
 import com.prana.footballapps.view.fragment.NextMatchFragment
 import com.prana.footballapps.view.fragment.PrevMatchFragment
 import kotlinx.android.synthetic.main.activity_home.*
@@ -44,6 +46,12 @@ class HomeActivity : AppCompatActivity(),
                 openMatchFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
+            R.id.nav_fav_match -> {
+                longToast(R.string.favorite_match)
+                val fragment = FavoMatchFragment()
+                openMatchFragment(fragment)
+                return@OnNavigationItemSelectedListener true
+            }
         }
         false
     }
@@ -51,6 +59,9 @@ class HomeActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        // Inisialisi Stetho untuk cek database via chrome
+        Stetho.initializeWithDefaults(this)
 
         // Set Fragment yang pertama kali ditampilkan
         openMatchFragment( PrevMatchFragment.newInstance() )

@@ -11,9 +11,9 @@
         android:icon="@drawable/ic_event_black_24dp"
         android:title="@string/title_next_match" />
 
-    <!--<item-->
-        <!--android:id="@+id/navigation_notifications"-->
-        <!--android:icon="@drawable/icons8_calendar_64"-->
-        <!--android:title="@string/title_notifications" />-->
+    <item
+        android:id="@+id/nav_fav_match"
+        android:icon="@drawable/ic_stars_black_24dp"
+        android:title="@string/favorite_match" />
 
 </menu>
