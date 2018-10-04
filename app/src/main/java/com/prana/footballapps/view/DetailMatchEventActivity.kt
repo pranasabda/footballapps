@@ -205,7 +205,9 @@ class DetailMatchEventActivity : AppCompatActivity(), DetailMatchEventView {
 
     private fun addToFavorite() {
 
-        Log.d("Debug", "Add")
+        // Log.d("Debug", "Add")
+
+        swipeRefreshLayout = detail_swipe_refresh
 
         try {
             database.use {
@@ -219,24 +221,26 @@ class DetailMatchEventActivity : AppCompatActivity(), DetailMatchEventView {
                         // FavoriteMatch.HOME_GOAL_DETAIL to HomeGoalDetails,
                         // FavoriteMatch.AWAY_GOAL_DETAIL to matchDataItem.mAwayGoalDetails)
             }
-            //snackbar(swipeRefreshLayout, "Added to Your Favorite Match").show()
+            snackbar(swipeRefreshLayout, "Added to Your Favorite Match").show()
         }catch (e: SQLiteConstraintException){
-            //snackbar(swipeRefreshLayout, e.localizedMessage).show()
+            snackbar(swipeRefreshLayout, e.localizedMessage).show()
         }
     }
 
     private fun removeToFavorite() {
 
-        Log.d("Debug", "Remove")
+        // Log.d("Debug", "Remove")
+
+        swipeRefreshLayout = detail_swipe_refresh
 
         try {
             database.use {
                 delete(FavoriteMatch.TABLE_FAV_MATCH, "( ID_EVENT = {id_event} )",
                         "id_event" to id_event)
             }
-            // snackbar(swipeRefreshLayout, "Added to Your Favorite Match").show()
+            snackbar(swipeRefreshLayout, "Remove From Favorite Match").show()
         }catch (e: SQLiteConstraintException){
-            // snackbar(swipeRefreshLayout, e.localizedMessage).show()
+            snackbar(swipeRefreshLayout, e.localizedMessage).show()
         }
     }
 
