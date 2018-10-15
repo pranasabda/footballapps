@@ -11,6 +11,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.indeterminateProgressDialog
 import org.jetbrains.anko.startActivity
 
+
+// CATATAN : Untuk Submission 2 - 5 (final project) kelas MainActivity tidak digunakan.
 class MainActivity : AppCompatActivity() {
 
 
@@ -31,14 +33,14 @@ class MainActivity : AppCompatActivity() {
 
         progressDialog.dismiss()
 
-        team_list_rv.layoutManager = LinearLayoutManager(this)
-        team_list_rv.adapter = TeamAdapter(this, teamDataItems) { itemClicked(it)}
+        //team_list_rv.layoutManager = LinearLayoutManager(this)
+        //team_list_rv.adapter = TeamAdapter(this, teamDataItems) { itemClicked(it)}
     }
 
     private fun itemClicked(itemData: TeamDataItem) {
-        startActivity<TeamDetails>(TeamDetails.TEAM_NAME to itemData.teamName,
-                                    TeamDetails.TEAM_IMAGE to itemData.teamImage,
-                                    TeamDetails.TEAM_DESCRIPTION to itemData.teamDescription )
+        startActivity<TeamDetails>(TeamDetails.TEAM_NAME to itemData.mTeamName,
+                                    TeamDetails.TEAM_IMAGE to itemData.mTeamBadge,
+                                    TeamDetails.TEAM_DESCRIPTION to itemData.mTeamDescription )
     }
 
     private fun initData() {
@@ -48,10 +50,10 @@ class MainActivity : AppCompatActivity() {
 
         teamDataItems.clear()
 
-        for (i in teamName.indices) {
-            teamDataItems.add(TeamDataItem(teamName[i],
-                    teamImage.getResourceId(i,0), teamDesc[i]))
-        }
+//        for (i in teamName.indices) {
+//            teamDataItems.add(TeamDataItem(teamName[i],
+//                    teamImage.getResourceId(i,0), teamDesc[i]))
+//        }
         //Recycle tipe array
         teamImage.recycle()
     }

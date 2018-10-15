@@ -1,10 +1,13 @@
 package com.prana.footballapps.model
 
 //import javax.annotation.Generated
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 // POJO Disusun Sesuai Tampilan
 //@Generated("com.robohorse.robopojogenerator")
+@Parcelize
 data class MatchDataItem (
         // POJO Disusun Sesuai Tampilan
         @SerializedName("idEvent")
@@ -31,5 +34,8 @@ data class MatchDataItem (
         var mAwayScore: String? = null,
 
         @SerializedName("strAwayGoalDetails") // X
-        val mAwayGoalDetails: String? = null
-)
+        val mAwayGoalDetails: String? = null,
+
+        @SerializedName("strTime")
+        var mTime: String? = null
+):Parcelable

@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.FavoMatchFragment">
+    tools:context=".view.fragment.FavoriteTeamsFragment">
 
-    <!--&lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
     <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:text="@string/hello_blank_fragment" />-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="helo ini favorite team"-->
+        <!--/>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,20 +20,18 @@
         android:orientation="vertical">
 
         <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/fav_swipe_refresh"
+            android:id="@+id/fav_team_swipe_refresh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_fav_match"
+                android:id="@+id/rv_fav_team"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
             </android.support.v7.widget.RecyclerView>
 
         </android.support.v4.widget.SwipeRefreshLayout>
-
-
 
     </LinearLayout>
 

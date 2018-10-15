@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--tools:context=".view.SearchEventActivity"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/App_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <SearchView
+            android:id="@+id/search_view_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryBackground="@color/white"/>
+
+        <!--app:actionViewClass="android.support.v7.widget.SearchView"-->
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_search_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/App_bar_layout">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_search_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/App_bar_layout"
+            android:padding="15dp"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar_search_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

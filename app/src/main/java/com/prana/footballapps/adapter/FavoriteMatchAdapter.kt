@@ -39,16 +39,18 @@ class FavMatchViewHolder (view: View) : RecyclerView.ViewHolder(view) {
     val mAwayTeam   : TextView = view.find(R.id.tv_away_team)
     val mHomeScore  : TextView = view.find(R.id.tv_home_score)
     val mAwayScore  : TextView = view.find(R.id.tv_away_score)
+    val mTime       : TextView = view.find(R.id.tv_time_event)
 
     /* TODO : Delete parameter -> listener: NextMatchFragment.OnFragmentInteractionListener?
      * Ganti dengan -> listener : (FavoriteMatch) -> Unit
      */
     fun bindItem(itemFav: FavoriteMatch, listener: (FavoriteMatch) -> Unit ) {
         mDateEvent.text = itemFav.dateEvent
-        mHomeTeam.text = itemFav.homeTeam
-        mAwayTeam.text = itemFav.awayTeam
+        mHomeTeam.text  = itemFav.homeTeam
+        mAwayTeam.text  = itemFav.awayTeam
         mHomeScore.text = itemFav.homeScore
         mAwayScore.text = itemFav.awayScore
+        mTime.text      = itemFav.time
 
         // Menggunakan simple fragment, dan listener : (FavoriteMatch) -> Unit
         itemView.onClick { listener(itemFav) }

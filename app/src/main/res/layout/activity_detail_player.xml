@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.DetailPlayerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/img_player_banner_detail"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/black"
+        android:contentDescription="@string/description" />
+
+    <ImageView
+        android:id="@+id/img_player_potrait_detail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:src="@drawable/img_barca"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/tv_player_name_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Messi"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/weight_kg"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/height_m"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_player_weight_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:text="100.99" />
+
+        <TextView
+            android:id="@+id/tv_player_height_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:text="2.99" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_player_position_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="Forward" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/bluegray" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_player_description_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            tools:text="Description" />
+
+    </ScrollView>
+
+    </LinearLayout>
+
+</ScrollView>

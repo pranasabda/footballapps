@@ -27,6 +27,15 @@
         <item>@drawable/img_arsenal</item>
     </array>
 
+    <array name="league">
+        <item>Spanish La Liga</item> <!-- ID : 4335 -->
+        <item>English Premier League</item> <!-- ID : 4328 -->
+        <item>English League Championship</item> <!-- ID : 4329 -->
+        <item>German Bundesliga</item> <!-- ID : 4331 -->
+        <item>Italian Serie A</item> <!-- ID : 4332 -->
+        <item>French Ligue 1</item> <!-- ID : 4334 -->
+    </array>
+
     <!--Deskripsi Team-->
     <array name="club_description">
         <item>Barcelona FC, dikenal sebagai Barcelona atau Barça, adalah klub sepak bola profesional
@@ -58,7 +67,7 @@
         </item>
     </array>
     <string name="title_activity_home">Football Apps</string>
-    <string name="title_prev_match">Prev Match</string>
+    <string name="title_match_nav">Match</string>
     <string name="title_next_match">Next Match</string>
     <string name="title_notifications">Notifications</string>
 
@@ -75,7 +84,12 @@
     <string name="substitutes">Substitutes</string>
     <string name="lineups">Lineups</string>
     <string name="textDetails">%1$s\n%2$s</string>
-    <string name="favorite_match">Favorite Match</string>
+    <string name="title_favorite_nav">Favorite</string>
     <string name="favorites">favorites</string>
+    <string name="title_teams_nav">Teams</string>
+    <string name="weight_kg">Weight(Kg)</string>
+    <string name="height_m">Height(m)</string>
+    <string name="description">Description</string>
+    <string name="search">Search</string>
 
 </resources>

@@ -10,10 +10,15 @@ import com.prana.footballapps.R
 import com.prana.footballapps.model.TeamDataItem
 import kotlinx.android.synthetic.main.team_item_list.view.* // Automatis terImport apabila menggunakan itemView
 
-class TeamAdapter (private val context: Context, private val teamDataItem: List<TeamDataItem>, private val listener: (TeamDataItem) -> Unit) : RecyclerView.Adapter<ViewHolder>() {
+class TeamAdapter ( private val teamDataItem: List<TeamDataItem>,
+                    private val listener: (TeamDataItem) -> Unit)
+    : RecyclerView.Adapter<ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)=
-            ViewHolder(LayoutInflater.from(context).inflate(R.layout.team_item_list, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+                .inflate(R.layout.team_item_list, parent, false)
+        return ViewHolder(view)
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItem(teamDataItem[position], listener)
@@ -33,8 +38,8 @@ class TeamAdapter (private val context: Context, private val teamDataItem: List<
 class ViewHolder(val view: View): RecyclerView.ViewHolder(view) {
 
     fun bindItem(teamDataItem: TeamDataItem, listener: (TeamDataItem) -> Unit) {
-        itemView.name_team_view.text = teamDataItem.teamName
-        Glide.with(itemView.context).load(teamDataItem.teamImage).into(itemView.image_team_view)
+        itemView.name_team_view.text = teamDataItem.mTeamName
+        Glide.with(itemView.context).load(teamDataItem.mTeamBadge).into(itemView.image_team_view)
 
         itemView.setOnClickListener {
             listener(teamDataItem)

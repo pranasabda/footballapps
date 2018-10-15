@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/nav_prev_match"
-        android:icon="@drawable/icons8_trophy_50"
-        android:title="@string/title_prev_match" />
+        android:id="@+id/nav_match"
+        android:icon="@drawable/icons8_trophy_64"
+        android:title="@string/title_match_nav" />
 
     <item
-        android:id="@+id/nav_next_match"
-        android:icon="@drawable/ic_event_black_24dp"
-        android:title="@string/title_next_match" />
+        android:id="@+id/nav_teams"
+        android:icon="@drawable/icons8_soccerball_50"
+        android:title="@string/title_teams_nav" />
 
     <item
-        android:id="@+id/nav_fav_match"
+        android:id="@+id/nav_favorite"
         android:icon="@drawable/ic_stars_black_24dp"
-        android:title="@string/favorite_match" />
+        android:title="@string/title_favorite_nav" />
 
 </menu>

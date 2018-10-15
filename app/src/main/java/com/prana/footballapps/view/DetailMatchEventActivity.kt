@@ -32,6 +32,7 @@ import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
 import org.jetbrains.anko.design.snackbar
 import org.jetbrains.anko.support.v4.swipeRefreshLayout
+import java.text.SimpleDateFormat
 
 class DetailMatchEventActivity : AppCompatActivity(), DetailMatchEventView {
 
@@ -41,12 +42,14 @@ class DetailMatchEventActivity : AppCompatActivity(), DetailMatchEventView {
     // Menu Fav & Add Data for Favorite
     private var menuItem: Menu? = null
     private var isFavorite: Boolean = false
+
     private lateinit var id_event : String
     private var home_team : String? = null
     private var away_team : String? = null
     private var home_score : String? = null
     private var away_score : String? = null
     private var date_event : String? = null
+    private var time_event : String? = null
     //private lateinit var matchDataItem: MatchDataItem
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
 
@@ -63,9 +66,18 @@ class DetailMatchEventActivity : AppCompatActivity(), DetailMatchEventView {
         away_team   = intent.getStringExtra("away_team" )
         away_score  = intent.getStringExtra("away_score")
         date_event  = intent.getStringExtra("date_event")
+        time_event  = intent.getStringExtra("time_event")
 
         progressBar = progress_bar_details
-        tv_date_event_details.text  = date_event
+
+        val formatDate = SimpleDateFormat("yyyy-MM-dd")
+        val formatGMT = SimpleDateFormat("E, dd MMM yyyy")
+        val dateParse = formatDate.parse(date_event)
+        val dateEvent = formatGMT.format(dateParse)
+
+        //tv_date_event_details.text  = date_event
+        tv_date_event_details.text  = dateEvent
+        tv_time_event_details.text = time_event
         tv_home_team_details.text   = home_team
         tv_home_score_details.text  = home_score
         tv_away_team_details.text   = away_team
@@ -80,6 +92,12 @@ class DetailMatchEventActivity : AppCompatActivity(), DetailMatchEventView {
         detailPresenter = MatchEventDetailPresenter(this, apiReq, gson)
 
         detailPresenter.getMatchEventDetail(id_event)
+
+        // Jika data hasil search / data kosong. di set default Barca & Real Madrio agar tidak error Null
+        if(home_team.equals(null) || away_team.equals(null)) {
+            home_team = "Barcelona"
+            away_team = "Real Madrid"}
+
         detailPresenter.getTeamBadge(home_team, "Home")
         detailPresenter.getTeamBadge(away_team, "Away")
 
@@ -217,7 +235,8 @@ class DetailMatchEventActivity : AppCompatActivity(), DetailMatchEventView {
                         FavoriteMatch.HOME_TEAM to home_team,
                         FavoriteMatch.AWAY_TEAM to away_team,
                         FavoriteMatch.HOME_SCORE to home_score,
-                        FavoriteMatch.AWAY_SCORE to away_score)
+                        FavoriteMatch.AWAY_SCORE to away_score,
+                        FavoriteMatch.TIME_EVENT to time_event)
                         // FavoriteMatch.HOME_GOAL_DETAIL to HomeGoalDetails,
                         // FavoriteMatch.AWAY_GOAL_DETAIL to matchDataItem.mAwayGoalDetails)
             }
@@ -247,7 +266,8 @@ class DetailMatchEventActivity : AppCompatActivity(), DetailMatchEventView {
     // Membuat Status/State Favorite
     private fun favoriteState(){
         database.use {
-            val result = select(FavoriteMatch.TABLE_FAV_MATCH).whereArgs("( ID_EVENT = {id_event})",
+            val result = select(FavoriteMatch.TABLE_FAV_MATCH)
+                    .whereArgs("( ID_EVENT = {id_event})",
                     "id_event" to id_event)
             val favoriteMatch = result.parseList(classParser<FavoriteMatch>())
             if (!favoriteMatch.isEmpty()) isFavorite = true

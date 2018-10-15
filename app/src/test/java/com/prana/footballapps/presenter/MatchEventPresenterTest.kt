@@ -47,8 +47,9 @@ class MatchEventPresenterTest {
         verify(view).showDataMatchList(dataMatch)
     }
 
+    // Pilih salah satu untuk menjalankan test, karena Mocknya dibuat sama.
     /*
-    @Test
+    //@Test
     fun testGetMatchNextData() {
         val dataMatch: MutableList<MatchDataItem> = mutableListOf()
         val response = MatchDataItemResponse(dataMatch)
@@ -64,4 +65,5 @@ class MatchEventPresenterTest {
         verify(view).showDataMatchList(dataMatch)
     }
     */
+
 }

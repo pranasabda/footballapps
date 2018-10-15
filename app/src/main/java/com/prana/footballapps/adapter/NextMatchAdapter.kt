@@ -9,6 +9,8 @@ import com.prana.footballapps.R
 import com.prana.footballapps.model.MatchDataItem
 import com.prana.footballapps.view.fragment.NextMatchFragment
 import org.jetbrains.anko.find
+import java.text.SimpleDateFormat
+import java.util.*
 
 class NextMatchAdapter (
     private val dataItems: MutableList<MatchDataItem>,
@@ -41,11 +43,29 @@ class NextMatchAdapter (
         val mAwayTeam   : TextView = view.find(R.id.tv_away_team)
         val mHomeScore  : TextView = view.find(R.id.tv_home_score)
         val mAwayScore  : TextView = view.find(R.id.tv_away_score)
+        val mTime       : TextView = view.find(R.id.tv_time_event)
 
         fun bindItem(item: MatchDataItem, listener: NextMatchFragment.OnFragmentInteractionListener?) {
-            mDateEvent.text = item.mDateEvent
-            mHomeTeam.text = item.mHomeTeam
-            mAwayTeam.text = item.mAwayTeam
+
+            /* // Format Tanggal
+            val formatDate = SimpleDateFormat("yyyy-MM-dd")
+            val formatGMT = SimpleDateFormat("E, dd MMM yyyy")
+            val dateParse = formatDate.parse(item.mDateEvent)
+            val dateEvent = formatGMT.format(dateParse)
+            */
+
+            val timeconvert = toGMTFormat(item.mDateEvent,item.mTime)
+            val formatDate = SimpleDateFormat("E, dd MM yyyy")
+            val formatTime = SimpleDateFormat("HH:mm")
+            val date = formatDate.format(timeconvert)
+            val timeNew = formatTime.format(timeconvert)
+
+            item.mTime
+            item.mDateEvent
+            mDateEvent.text = "$date"
+            mTime.text      = "$timeNew"
+            mHomeTeam.text  = item.mHomeTeam
+            mAwayTeam.text  = item.mAwayTeam
             mHomeScore.text = item.mHomeScore
             mAwayScore.text = item.mAwayScore
 
@@ -56,3 +76,12 @@ class NextMatchAdapter (
     }
 
 }
+
+// Fungsi untuk convert Tanggal dan waktu ke GMT.
+private fun toGMTFormat(date: String?, time: String?): Date? {
+    val formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+    formatter.timeZone = TimeZone.getTimeZone("UTC")
+    val dateTime = "$date $time"
+    return formatter.parse(dateTime)
+}
+

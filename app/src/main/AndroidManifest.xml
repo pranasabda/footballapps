@@ -3,15 +3,17 @@
     package="com.prana.footballapps">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/football_icon_app"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainActivity"></activity>
+        <activity android:name=".view.MainActivity" />
         <activity android:name=".view.TeamDetails" />
         <activity
             android:name=".view.HomeActivity"
@@ -22,7 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.DetailMatchEventActivity"></activity>
+        <activity android:name=".view.DetailMatchEventActivity" />
+        <activity
+            android:name=".view.DetailTeamActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity android:name=".view.DetailPlayerActivity" />
+        <activity android:name=".view.SearchEventActivity"></activity>
     </application>
 
 </manifest>

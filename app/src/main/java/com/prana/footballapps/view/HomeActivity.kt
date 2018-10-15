@@ -7,9 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import com.facebook.stetho.Stetho
 import com.prana.footballapps.R
 import com.prana.footballapps.model.MatchDataItem
-import com.prana.footballapps.view.fragment.FavoMatchFragment
-import com.prana.footballapps.view.fragment.NextMatchFragment
-import com.prana.footballapps.view.fragment.PrevMatchFragment
+import com.prana.footballapps.view.fragment.*
 import kotlinx.android.synthetic.main.activity_home.*
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.startActivity
@@ -34,21 +32,24 @@ class HomeActivity : AppCompatActivity(),
     // Fungsi Navigation Untuk Replace Fragment
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.nav_prev_match -> {
-                toast(R.string.title_prev_match)
-                val fragment = PrevMatchFragment.newInstance()
+            R.id.nav_match -> {
+                toast(R.string.title_match_nav)
+                // val fragment = PrevMatchFragment.newInstance()
+                val fragment = ParentMatchFragment()
                 openMatchFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.nav_next_match -> {
-                longToast(R.string.title_next_match)
-                val fragment = NextMatchFragment.newInstance()
+            R.id.nav_teams -> {
+                longToast(R.string.title_teams_nav)
+                //val fragment = NextMatchFragment.newInstance()
+                val fragment = TeamsFragment()
                 openMatchFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.nav_fav_match -> {
-                longToast(R.string.favorite_match)
-                val fragment = FavoMatchFragment()
+            R.id.nav_favorite -> {
+                longToast(R.string.title_favorite_nav)
+                // val fragment = FavoriteMatchesFragment()
+                val fragment = ParentFavoriteFragment()
                 openMatchFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
@@ -60,11 +61,14 @@ class HomeActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        // supportActionBar?.elevation = 0F
+
         // Inisialisi Stetho untuk cek database via chrome
         Stetho.initializeWithDefaults(this)
 
         // Set Fragment yang pertama kali ditampilkan
-        openMatchFragment( PrevMatchFragment.newInstance() )
+        //openMatchFragment( PrevMatchFragment.newInstance() )
+        openMatchFragment( ParentMatchFragment() )
 
         btn_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }

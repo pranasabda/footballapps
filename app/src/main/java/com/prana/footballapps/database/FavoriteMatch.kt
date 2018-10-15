@@ -8,7 +8,8 @@ data class FavoriteMatch(val id: Long?,
                          val homeScore: String?,
                          val awayScore: String?,
                          val homeGoalDetails: String?,
-                         val awayGoalDetails: String?){
+                         val awayGoalDetails: String?,
+                         val time: String?){
 
     companion object {
         const val TABLE_FAV_MATCH: String = "TABLE_FAVORITE_MATCH"
@@ -21,5 +22,12 @@ data class FavoriteMatch(val id: Long?,
         const val AWAY_TEAM = "AWAY_TEAM"
         const val AWAY_SCORE = "AWAY_SCORE"
         const val AWAY_GOAL_DETAIL = "AWAY_GOAL_DETAIL"
+        const val TIME_EVENT = "TIME_EVENT"
+
+        //const val TABLE_FAV_TEAM: String = "TABLE_FAVORITE_TEAM"
+        //const val ID_DB: String = "ID_DB_"
+        //const val ID_TEAM = "ID_TEAM"
+        //const val IMAGE_TEAM = "IMAGE_TEAM"
+        //const val NAME_TEAM = "NAME_TEAM"
     }
 }

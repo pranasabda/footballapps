@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragment.ParentMatchFragment">
+
+    <!--&lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text="@string/hello_blank_fragment" />-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_match"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs_match"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabBackground="@color/colorPrimary"
+            app:tabTextColor="@color/bluegray"
+            app:tabSelectedTextColor="@color/white"
+            app:tabIndicatorColor="@color/colorRed"
+            app:tabMode="fixed"
+            app:tabMaxWidth="0dp"
+            app:tabGravity="fill"
+            android:layout_gravity="top"/>
+
+    </android.support.v4.view.ViewPager>
+
+</android.support.constraint.ConstraintLayout>

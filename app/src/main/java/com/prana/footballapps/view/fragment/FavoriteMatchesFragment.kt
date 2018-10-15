@@ -3,7 +3,6 @@ package com.prana.footballapps.view.fragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -16,15 +15,14 @@ import com.prana.footballapps.adapter.FavoriteMatchAdapter
 import com.prana.footballapps.database.FavoriteMatch
 import com.prana.footballapps.database.database
 import com.prana.footballapps.view.DetailMatchEventActivity
-import kotlinx.android.synthetic.main.fragment_favo_match.*
+import kotlinx.android.synthetic.main.fragment_favorite_matches.*
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.select
-import org.jetbrains.anko.recyclerview.v7.recyclerView
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.onRefresh
 
-class FavoMatchFragment : Fragment() {
+class FavoriteMatchesFragment : Fragment() {
 
     private var favoriteMatch : MutableList<FavoriteMatch> = mutableListOf()
     private lateinit var adapter: FavoriteMatchAdapter
@@ -42,7 +40,8 @@ class FavoMatchFragment : Fragment() {
                                                         "away_team" to "${it.awayTeam}",
                                                         "away_score" to "${it.awayScore}",
                                                         "away_score" to "${it.awayScore}",
-                                                        "date_event" to "${it.dateEvent}")
+                                                        "date_event" to "${it.dateEvent}",
+                                                        "time_event" to "${it.time}")
         }
 
 //        listMatch.layoutManager = LinearLayoutManager(ctx);
@@ -73,6 +72,6 @@ class FavoMatchFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favo_match, container, false)
+        return inflater.inflate(R.layout.fragment_favorite_matches, container, false)
     }
 }

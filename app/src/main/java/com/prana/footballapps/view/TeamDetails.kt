@@ -14,10 +14,12 @@ import org.jetbrains.anko.*
 class TeamDetails : AppCompatActivity() {
 
     companion object {
+        const val TEAM_ID                = "id"
         const val TEAM_NAME              = "name"
         const val TEAM_IMAGE             = "image"
         const val TEAM_DESCRIPTION       = "description"
     }
+    private var team_id:             String  = ""
     private var team_name:           String  = ""
     private var team_image:          Int     = 0
     private var team_description:    String  = ""
@@ -54,9 +56,10 @@ class TeamDetails : AppCompatActivity() {
                     }
         }
 
-        team_name        = intent.getStringExtra(TEAM_NAME)
-        team_image       = intent.getIntExtra(TEAM_IMAGE,0)
-        team_description = intent.getStringExtra(TEAM_DESCRIPTION)
+        team_id          = intent.getStringExtra(TEAM_ID)
+        //team_name        = intent.getStringExtra(TEAM_NAME)
+        //team_image       = intent.getIntExtra(TEAM_IMAGE,0)
+        //team_description = intent.getStringExtra(TEAM_DESCRIPTION)
 
         name_tv.text = team_name
         Glide.with(image_iv).load(team_image).into(image_iv)

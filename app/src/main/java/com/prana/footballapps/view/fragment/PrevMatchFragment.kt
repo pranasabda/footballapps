@@ -6,11 +6,13 @@ import android.support.v4.app.Fragment
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.ProgressBar
+import android.widget.Spinner
 import com.google.gson.Gson
 import com.prana.footballapps.R
 import com.prana.footballapps.adapter.PrevMatchAdapter
@@ -19,6 +21,7 @@ import com.prana.footballapps.model.MatchDataItem
 import com.prana.footballapps.presenter.MatchEventPresenter
 import com.prana.footballapps.view.MatchEventView
 import kotlinx.android.synthetic.main.fragment_prev_match.view.*
+import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.onRefresh
 
 /**
@@ -39,6 +42,8 @@ class PrevMatchFragment : Fragment(), MatchEventView {
     private lateinit var adapter             : PrevMatchAdapter
     private lateinit var swipeRefreshLayout  : SwipeRefreshLayout
     private lateinit var progressBar         : ProgressBar
+    private lateinit var spinner             : Spinner
+    private lateinit var league              : String
 
     /*
     *  override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,7 +60,49 @@ class PrevMatchFragment : Fragment(), MatchEventView {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_prev_match, container, false)
 
-        val rv = view.findViewById<RecyclerView>(R.id.rv_match_list)
+        // Setting SpinnerAdapter
+        spinner = view.spinner_prev_match
+        val spinnerItems = resources.getStringArray(R.array.league)
+        val spinnerAdapter = ArrayAdapter(ctx, android.R.layout.simple_spinner_dropdown_item, spinnerItems)
+        spinner.adapter = spinnerAdapter
+
+        // Spinner onClick
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                //  TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                when(position) {
+                    0 -> {
+                        league = spinner.selectedItem.toString().replace("Spanish La Liga", "4335")
+                        matchEventPresenter.getMatchPrevData(league)
+                    }
+                    1 -> {
+                        league = spinner.selectedItem.toString().replace("English Premier League", "4328")
+                        matchEventPresenter.getMatchPrevData(league)
+                    }
+                    2 -> {
+                        league = spinner.selectedItem.toString().replace("English League Championship", "4329")
+                        matchEventPresenter.getMatchPrevData(league)
+                    }
+                    3 -> {
+                        league = spinner.selectedItem.toString().replace("German Bundesliga", "4331")
+                        matchEventPresenter.getMatchPrevData(league)
+                    }
+                    4 -> {
+                        league = spinner.selectedItem.toString().replace("Italian Serie A", "4332")
+                        matchEventPresenter.getMatchPrevData(league)
+                    }
+                    5 -> {
+                        league = spinner.selectedItem.toString().replace("French Ligue 1", "4334")
+                        matchEventPresenter.getMatchPrevData(league)
+                    }
+                }
+            }
+        }
+
+        val rv = view.findViewById<RecyclerView>(R.id.rv_match_prev_list)
         rv.layoutManager = LinearLayoutManager(context)
         adapter = PrevMatchAdapter(dataItems, listener)
         rv.adapter = adapter
@@ -64,7 +111,7 @@ class PrevMatchFragment : Fragment(), MatchEventView {
         progressBar         = view.progress_bar
 
         swipeRefreshLayout.onRefresh {
-            matchEventPresenter.getMatchPrevData("4335")
+            matchEventPresenter.getMatchPrevData(league) // "4335"
         }
 
         showProgress()
@@ -73,7 +120,7 @@ class PrevMatchFragment : Fragment(), MatchEventView {
         val gson    = Gson()
         matchEventPresenter = MatchEventPresenter(this, apiReq, gson )
 //        Log.e("Data Error", "Log: " +matchEventPresenter)
-        matchEventPresenter.getMatchPrevData("4335")
+       // matchEventPresenter.getMatchPrevData(league) // "4335" // di close karena sudah di set dengan spinner
 
         return view
     }
