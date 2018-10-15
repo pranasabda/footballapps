@@ -28,4 +28,4 @@ Feature dan kode yang perlu diperbaiki dari project ini :
 - Implementasi Anko Layout. (karena kode project ini masih menggunakan xml layout.)
 - Implementasi Library Network seperti : Retrofit.
 
-- Terima kasih -
+=== Terima kasih ===
