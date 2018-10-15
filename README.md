@@ -21,7 +21,7 @@ Mohon untuk <b> tidak copy - paste </b> kode ini untuk submision project KADE ka
 karena akan merugikan diri sendiri dan berdampak terkena sanksi plagiat dari dicoding.
 pergunakan kode ini dengan bijak.
 
-Feature dan kode yang perlu diperbaiki dari kode ini :
+Feature dan kode yang perlu diperbaiki dari project ini :
 - Perbaiki penamaan variable yang masih menggunakan snackcase
 - Feature tambahkan data next event kedalam kalender.
 - Struktur file dan folder perlu di group / di rapihkan.
