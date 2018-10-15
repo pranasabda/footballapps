@@ -9,7 +9,7 @@
 
 <img src="https://www.dicoding.com/images/original/academy/kotlin_android_developer_expert_image_120318124058.png" width="1200" height="500">
 
-Project ini merupakan tugas / submission dari [Kotlin Android Developer Expert (KADE)](https://www.dicoding.com/academies/55)
+Project ini merupakan tugas / submission dari [Kotlin Android Developer Expert (KADE)](https://www.dicoding.com/academies/55) - [Dicoding](https://www.dicoding.com)
 silahkan memanfaatkan kode project ini sebagai referensi.
 
 Repo ini terdiri dari Submission 1 -5, Untuk masing-masing submission silahkan pilih branch-nya:
