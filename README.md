@@ -3,6 +3,10 @@
  <!--- ![Dicoding KADE Image](https://www.dicoding.com/images/original/academy/kotlin_android_developer_expert_image_120318124058.png | width=200)
 -->
 
+ <!---
+![very good|265x144,5%](https://www.dicoding.com/images/original/academy/kotlin_android_developer_expert_image_120318124058.png)
+-->
+
 <img src="https://www.dicoding.com/images/original/academy/kotlin_android_developer_expert_image_120318124058.png" width="1200" height="500">
 
 Project ini merupakan tugas / submission dari [Kotlin Android Developer Expert (KADE)](https://www.dicoding.com/academies/55)
