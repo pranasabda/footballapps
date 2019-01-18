@@ -1,6 +1,6 @@
 # Project Football Apps
 
- <!--- ![Dicoding KADE Image](https://www.dicoding.com/images/original/academy/kotlin_android_developer_expert_image_120318124058.png | width=200)
+ <!--- ![Dicoding KADE Image](https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png | width=200)
 -->
 
  <!---
